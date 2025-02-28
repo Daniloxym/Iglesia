@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Poppins", serif;
+    --color_titulos: #545454;
+}
+
+/*------BARRA DE NAVEGACIÓN---------------*/
+.navegacion{
+    height: 96px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 2px #b4715b;
+}
+.navegacion__contenedor{
+
+    width: 95%;
+    margin-inline:auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.navegacion__lista{
+    display: flex;
+    gap: 36px;
+    
+}
+
+.navegacion__item{
+    list-style: none;
+    position: relative;  
+}
+
+.navegacion__item::after{
+    content: '';
+    width: 0;
+    height: 4px;
+    background-color: #b4715b;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    top: 35px;
+    transition: width .2s linear;
+    
+}
+
+.navegacion__item a:hover {
+    color: #b4715b;
+}
+
+.navegacion__item:hover::after{
+
+    width: 100%;
+
+}
+
+.navegacion__item a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #888888;
+}
+
+
+.navegacion__logo{
+    width: 82px;
+    margin-top: 5px;
+}
+
+.btn{
+    width: 100%;
+    height: 700px;
+    display: block;
+    background-image:  url(./assets/img/imagen.jpg);
+    background-repeat: no-repeat;
+    background-position: center ;
+    background-size: cover;
+
+
+}
+/* ESTILOS DEL BANNER*/
+.banner{
+    height: 200px;
+    background-color:#faf5f2 ;
+    color: var(--color_titulos);
+    text-align: center;
+    box-shadow: 0 5px #d3b19e ;
+}
+
+.banner__texto{
+    display: flex;
+    height: 100%;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    margin-inline:auto;
+    gap: 15px;
+}
+
+.banner__titulo{
+    font-size: 1.4rem;
+}
+
+.banner__parrafo{
+    font-size: 1.3rem;
+}
+
+/* ESTILOS DE DESCRIPCION*/
+
+.descripcion{
+
+}
+
+.descripcion__titulo{
+    text-align: center;
+    font-size: 2rem;
+    margin-top: 80px;
+    margin-bottom: 70px;
+    color: var(--color_titulos);
+
+}
+
+.descripcion__elementos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+    height: 300px;
+    padding: 20px 25px;
+    text-align: center;
+    
+}
+
+.elemento{
+    color: var(--color_titulos);
+    font-weight: 600;
+    font-size: 1.35rem;
+    margin: 15px 0
+}
+
+.elemento__texto{
+    font-size: 1.2rem;
+    color: #676767;
+}
+.elemento__texto strong{
+    font-size: 1.3rem;
+    color: #363636;
+}

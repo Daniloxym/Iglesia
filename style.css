@@ -123,7 +123,19 @@ body,html {
   object-fit: cover;
   display: block;
   object-position: 0 35%;
+  position: relative;
 
+}
+
+.contenido__portada::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0.6) 10%, rgba(242,233,226,0) 47%);
+  
 }
 
 .contenido__titulo{
@@ -133,10 +145,11 @@ body,html {
   inset: 0;
   top: 20px;
   color: #FAF5F2;
+  z-index: 1;
 }
-.contenido__titulo :is(h3,p){
-  text-shadow: 0 0 2px #d3b19e;
-}
+/* .contenido__titulo :is(h3,p){
+  
+} */
 /*NAVEGACIÓN - SUBMENU*/
 .navegacion__item--posicion {
 }
@@ -297,7 +310,7 @@ body,html {
   aspect-ratio: 1;
   object-fit: cover;
   max-width: 320px;
-  min-width: 200px;
+  min-width: 250px;
   border-radius: 5px;
   box-shadow: 0 1px 5px var(--color_titulos);
 }
@@ -391,8 +404,8 @@ body,html {
   margin: 50px 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 60px;
-  justify-content: space-around;
+  gap:100px;
+  justify-content: center;
 }
 
 .informacion-general__direccion{
@@ -401,19 +414,21 @@ body,html {
   gap: 15px;
   color: var(--color_titulos);
   align-items: start;
+  justify-content: center;
 
 }
 
 .informacion-general__direccion h3{
-  font-size: var(--font-size-l);
+  font-size: var(--font-size-xl);
   margin: 15px 0;
   color: var(--color_titulos);
+  align-self: center;
 
 }
 
-.informacion-general__direccion figure:first-of-type{
-  align-items: baseline;
-}
+/* .informacion-general__direccion figure:first-of-type{
+
+} */
 
 .informacion-general__direccion figure{
   display: flex;
@@ -424,7 +439,7 @@ body,html {
 }
 
 .informacion-general__direccion p{
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-l);
   font-weight: var(--font-weight-semibold);
   
 }
@@ -439,14 +454,14 @@ body,html {
 .informacion-general__ubicacion{
 
   text-align: center;
-
+  width: 25%;
   
 }
 
 .informacion-general__google-maps{
   aspect-ratio: 16/9;
   max-width: 600px;
-  width: 90%;
+  width: 2000px;
   min-width: 350px;
   box-shadow: 0 2px 5px var(--gris_oscuro);
   margin-inline: auto;
@@ -460,7 +475,7 @@ body,html {
 span{
   font-weight: var(--font-weight-semibold);
   color: #363636;
-  font-size: var(--font-size-m);
+  font-size: var(--font-size-l);
   font-weight: var(--font-weight-normal);
 }
 /*FOOTER*/

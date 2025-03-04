@@ -31,7 +31,7 @@
 
 body,html {
   font-family: "Poppins", serif;
-  
+  scroll-behavior: smooth;
 }
 
 /*------BARRA DE NAVEGACIÓN---------------*/
@@ -49,6 +49,7 @@ body,html {
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  position: relative;
 }
 .navegacion__lista {
   display: flex;
@@ -56,7 +57,6 @@ body,html {
   height: 100%;
   align-items: center;
   list-style: none;
-
 }
 .navegacion__bars{
   display: none;
@@ -68,6 +68,7 @@ body,html {
   height: 100%;
   display: flex;
   align-items: center;
+  
 }
 
 .navegacion__item::after {
@@ -94,6 +95,7 @@ body,html {
   text-decoration: none;
   font-weight: var(--font-weight-semibold);
   color: #888888;
+  
 }
 
 .navegacion__logo {
@@ -116,26 +118,13 @@ body,html {
 }
 
 .contenido__img {
-  
   aspect-ratio: 16/9;
   width: 100%;
   max-height: 630px;
-  object-fit: cover;
-  display: block;
-  object-position: 0 35%;
-  position: relative;
+  background-image: linear-gradient(180deg, rgba(0,0,0,0.6) 10%, rgba(242,233,226,0) 47%), url("./assets/img/imagen.jpeg") ;
+  background-size: cover;
+  background-position: 0 30%;
 
-}
-
-.contenido__portada::after{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(180deg, rgba(0,0,0,0.6) 10%, rgba(242,233,226,0) 47%);
-  
 }
 
 .contenido__titulo{
@@ -145,7 +134,7 @@ body,html {
   inset: 0;
   top: 20px;
   color: #FAF5F2;
-  z-index: 1;
+  text-shadow: 0 5px 25px black;
 }
 /* .contenido__titulo :is(h3,p){
   
@@ -177,7 +166,6 @@ body,html {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  border-radius: 0 0 10px 10px;
   box-shadow: 0 4px 2px hsla(0, 0%, 0%, 0.2);
   display: none;
   opacity: 0;
@@ -193,13 +181,20 @@ body,html {
   height: 50%;
   line-height: 40px;
   border-radius: inherit;
+  background-color: #f7f7f7;
 }
-.submenu_elemento:first-child {
+
+.submenu li:nth-child(n){
+
+  box-shadow: 0 1px 4px #9e9e9e;
+}
+/* .submenu_elemento:first-child {
   box-shadow: 0 .5px 2px #9e9e9e;
   border-radius: 0;
-}
+} */
 .submenu_elemento:last-child {
-    box-shadow: 0 -.5px 2px #9e9e9e;
+    
+
   }
 
 .submenu_elemento:hover {
@@ -266,17 +261,18 @@ body,html {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 60px;
-}
-
-.categorias__lista{
+  gap: 50px;
   text-align: center;
 }
+
+
 .categorias__lista h3{
   font-size: var(--font-size-l);
   color: var(--color_titulos);
   margin-bottom: 20px;
 }
+
+
 
 .categorias__btn{
 
@@ -288,21 +284,46 @@ body,html {
   color: white;
   font-size: var(--font-size-m);
   cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 18px;
 }
-
 .categorias__btn:hover{
 
   background-color: #C18C76;
 }
 
+.categorias__btn:active{
+  background-color: #9a5345;
+}
+
+
+.categorias__btn--seminario{
+  background-color: white;
+  color: var(--primary-color);
+  font-weight: var(--font-weight-semibold);
+  border: 2px solid var(--primary-color);
+  padding: 13px 75px;
+}
+
+.categorias__btn--seminario:hover{
+  background-color: var(--primary-color);
+  color: white;
+}
+
+
+
+
 .seminario{
 
+  margin: 20px 0;
 
 }
 .evangelismo{
-
+  margin: 20px 0;
 }
 .nosotros{
+  margin: 20px 0;
 
 }
 
@@ -313,8 +334,17 @@ body,html {
   min-width: 250px;
   border-radius: 5px;
   box-shadow: 0 1px 5px var(--color_titulos);
+  transition: transform .6s ease;
+  display: block;
+  margin: 20px auto;
+  cursor: pointer;
 }
 
+.descripcion__img:hover{
+  transform: scale(1.05) translateY(-5px);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid var(--primary-color); */
+}
 
 
 
@@ -404,7 +434,8 @@ body,html {
   margin: 50px 0;
   display: flex;
   flex-wrap: wrap;
-  gap:100px;
+  align-content: center;
+  gap:90px;
   justify-content: center;
 }
 
@@ -416,10 +447,11 @@ body,html {
   align-items: start;
   justify-content: center;
 
+
 }
 
 .informacion-general__direccion h3{
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-l);
   margin: 15px 0;
   color: var(--color_titulos);
   align-self: center;
@@ -439,7 +471,7 @@ body,html {
 }
 
 .informacion-general__direccion p{
-  font-size: var(--font-size-l);
+  font-size: var(--font-size-m);
   font-weight: var(--font-weight-semibold);
   
 }
@@ -454,15 +486,17 @@ body,html {
 .informacion-general__ubicacion{
 
   text-align: center;
-  width: 25%;
+  width: 35%;
+  min-width: 370px;
+
   
 }
 
 .informacion-general__google-maps{
   aspect-ratio: 16/9;
   max-width: 600px;
-  width: 2000px;
-  min-width: 350px;
+  width: 90%;
+  min-width: 300px;
   box-shadow: 0 2px 5px var(--gris_oscuro);
   margin-inline: auto;
 }
@@ -475,7 +509,7 @@ body,html {
 span{
   font-weight: var(--font-weight-semibold);
   color: #363636;
-  font-size: var(--font-size-l);
+  font-size: var(--font-size-m);
   font-weight: var(--font-weight-normal);
 }
 /*FOOTER*/
@@ -544,6 +578,10 @@ span{
   background-color: #C18C76;
 }
 
+.formulario__btn:active{
+  background-color: #9a5345;
+}
+
 .footer__informacion{
   width: 35%;
   min-width: 250px;
@@ -564,6 +602,14 @@ span{
 .footer__informacion__texto{
   font-size: var(--font-size-m);
   margin-bottom: 15px;
+}
+
+.footer__informacion__direccion p:first-child{
+  font-weight: var(--font-weight-semibold);
+}
+
+.footer__informacion__correo p:first-child{
+  font-weight: var(--font-weight-semibold);
 }
 
 /*RESPONSIVE DESIGN*/
@@ -650,6 +696,18 @@ span{
 
 @media(width<=580px){
 
+  :root{
+
+    /*Font size*/
+    --font-size-xs:0.8rem;
+    --font-size-s:0.9rem;
+    --font-size-m:1rem;
+    --font-size-l :1.1rem;
+    --font-size-xl: 1.4rem;
+    --font-size-xxl:1.6rem;
+  
+  }
+
   .contenido__titulo{
     font-size: var(--font-size-xs);
     top: 30px;
@@ -657,12 +715,18 @@ span{
   }
   .banner__titulo {
     text-align: center;
+    
   }
   .banner__parrafo {
     text-align: left;
   }
   .footer__informacion__texto{
     font-size: var(--font-size-s);
+  }
+
+  .formulario__btn{
+    margin-inline: auto;
+    display: block;
   }
 }
 

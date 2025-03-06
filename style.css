@@ -22,7 +22,7 @@
   /*Colores*/
 
   --primary-color: #b4715b;
-  --btn-color: #A35E4E;
+  --btn-color: #a35e4e;
   --color_titulos: #3b3b3b;
 
   --color_texto: #363636;
@@ -82,7 +82,7 @@ html {
   transition: width 0.2s linear;
 }
 
-.navegacion__item a:hover {
+.navegacion__item:hover .navegacion__link {
   color: var(--primary-color);
 }
 
@@ -250,14 +250,16 @@ html {
 
 .categorias {
   padding: 0.1px;
-  padding: 50px 70px;
+  padding: 64px 70px;
 }
+
+
 
 .categorias__lista {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 50px;
+  gap: 60px;
   text-align: center;
 }
 
@@ -280,12 +282,11 @@ html {
   display: inline-block;
   text-decoration: none;
   margin-top: 18px;
-  transition: .4s ease;
+  transition: 0.4s ease;
 }
 .categorias__btn:hover {
   background-color: white;
   color: var(--btn-color);
-
 }
 
 .categorias__btn:active {
@@ -298,7 +299,7 @@ html {
   font-weight: var(--font-weight-semibold);
   border: 2px solid var(--btn-color);
   padding: 15px 75px;
-  transition: .4s ease;
+  transition: 0.4s ease;
 }
 
 .categorias__btn--seminario:hover {
@@ -336,14 +337,12 @@ html {
 }
 
 .descripcion {
-  padding: 0.1px;
-  margin-bottom: 50px;
+  padding: 64px 50px;
 }
 
 .descripcion__titulo {
   text-align: center;
   font-size: var(--font-size-xl);
-  margin-top: 50px;
   margin-bottom: 70px;
   color: var(--color_titulos);
 }
@@ -399,7 +398,7 @@ html {
 
 .informacion-general {
   background-color: #faf5f2;
-  padding: 0.1px;
+  padding: 64px 50px
 }
 
 .informacion-general__titulo {
@@ -407,7 +406,6 @@ html {
   color: var(--color_titulos);
   font-size: var(--font-size-xl);
   font-weight: var(--font-weight-bold);
-  margin-top: 40px;
 }
 
 .informacion-general__container {
@@ -428,7 +426,7 @@ html {
   justify-content: center;
 }
 
-.informacion-general__direccion p{
+.informacion-general__direccion p {
   color: var(--color_texto);
 }
 
@@ -546,10 +544,10 @@ span {
   font-size: var(--font-size-m);
   border: 2px solid var(--btn-color);
   background-color: var(--btn-color);
-  font-weight:var(--font-weight-medium);
+  font-weight: var(--font-weight-medium);
   border-radius: 8px;
   cursor: pointer;
-  transition: .4s ease;
+  transition: 0.4s ease;
 }
 
 .formulario__btn:hover {
@@ -622,18 +620,18 @@ span {
     top: 0;
   }
 
-  body.efecto header::before{
-      content: "";
-      position: fixed;
-      left: 0;
-      top: 0;
-      height: 100%;
-      width: 100%;
-      backdrop-filter: blur(5px);
-      background: rgba(0,0,0,0.3);
+  body.efecto header::before {
+    content: "";
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.3);
   }
 
-  body.efecto .navegacion__logo{
+  body.efecto .navegacion__logo {
     filter: blur(5px);
   }
 

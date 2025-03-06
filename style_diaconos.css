@@ -17,6 +17,9 @@ body{
     --color_texto: #676767;
     --gris_oscuro: #363636;
 }
+.diaconos{
+    margin-top: 96px;
+}
 
 .diaconos__texto{
     background-color: #b4715b;

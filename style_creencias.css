@@ -17,6 +17,10 @@ body{
    --color_texto: #676767;
    --gris_oscuro: #363636;
 }
+
+.creencias{
+    margin-top: 96px;
+}
 .creencias__texto{
     background-color: #b4715b;
     color: #FAF5F2;

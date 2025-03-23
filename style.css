@@ -88,6 +88,10 @@ html {
   color: var(--primary-color);
 }
 
+.navegacion__item:has(.navegacion__link--active)::after{
+  width: 100%;
+}
+
 .navegacion__item:hover::after {
   width: 100%;
 }
